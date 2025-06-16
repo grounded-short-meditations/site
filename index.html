@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grounded - Micro Meditation for Modern Life</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Grounded</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#meditation" class="nav-link">Meditations</a>
+                <a href="#download" class="nav-link download-btn">Download App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-elements">
+                <div class="element circle"></div>
+                <div class="element circle-small"></div>
+                <div class="element leaf"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Find Your Center in <span class="gradient-text">Micro Moments</span></h1>
+                <p class="hero-subtitle">Transform your day with bite-sized meditation sessions designed for busy minds. Just 30 seconds to 5 minutes of mindfulness, whenever you need it.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="startMeditation()">
+                        <i data-lucide="play-circle"></i>
+                        Start Now
+                    </button>
+                    <button class="btn-secondary">
+                        <i data-lucide="download"></i>
+                        Get the App
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="meditation-circle">
+                    <div class="breathing-animation"></div>
+                    <div class="center-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Grounded?</h2>
+                <p class="section-subtitle">Mindfulness made simple, accessible, and effective for modern life</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h3>Micro Sessions</h3>
+                    <p>30 seconds to 5 minutes - perfect for busy schedules and quick mental resets</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <h3>Science-Based</h3>
+                    <p>Evidence-backed techniques proven to reduce stress and improve focus</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="smartphone"></i>
+                    </div>
+                    <h3>Anywhere, Anytime</h3>
+                    <p>Practice on the go - during commutes, breaks, or whenever you need calm</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="target"></i>
+                    </div>
+                    <h3>Personalized</h3>
+                    <p>AI-powered recommendations based on your mood, time, and goals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meditation Preview Section -->
+    <section id="meditation" class="meditation-preview">
+        <div class="container">
+            <div class="meditation-content">
+                <div class="meditation-text">
+                    <h2 class="section-title">Experience Instant Calm</h2>
+                    <p class="meditation-description">Try our signature breathing exercise - a 2-minute guided session to center your mind and body.</p>
+                    <div class="meditation-stats">
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Minutes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4-7-8</span>
+                            <span class="stat-label">Breathing</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Benefits</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="meditation-player">
+                    <div class="player-container">
+                        <div class="breathing-guide" id="breathingGuide">
+                            <div class="breath-circle">
+                                <div class="breath-text" id="breathText">Click to Begin</div>
+                            </div>
+                        </div>
+                        <div class="player-controls">
+                            <button class="play-btn" id="playBtn" onclick="toggleBreathing()">
+                                <i data-lucide="play" id="playIcon"></i>
+                            </button>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <span class="time-display" id="timeDisplay">0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zen Quotes Section -->
+    <section class="zen-quotes">
+        <div class="container">
+            <div class="quote-carousel">
+                <div class="quote active" data-quote="0">
+                    <blockquote>"The present moment is the only time over which we have dominion."</blockquote>
+                    <cite>— Thích Nhất Hạnh</cite>
+                </div>
+                <div class="quote" data-quote="1">
+                    <blockquote>"Wherever you are, be there totally."</blockquote>
+                    <cite>— Eckhart Tolle</cite>
+                </div>
+                <div class="quote" data-quote="2">
+                    <blockquote>"Peace comes from within. Do not seek it without."</blockquote>
+                    <cite>— Buddha</cite>
+                </div>
+                <div class="quote" data-quote="3">
+                    <blockquote>"The mind is everything. What you think you become."</blockquote>
+                    <cite>— Buddha</cite>
+                </div>
+            </div>
+            <div class="quote-indicators">
+                <span class="indicator active" data-quote="0"></span>
+                <span class="indicator" data-quote="1"></span>
+                <span class="indicator" data-quote="2"></span>
+                <span class="indicator" data-quote="3"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <div class="download-text">
+                    <h2 class="section-title">Start Your Journey Today</h2>
+                    <p class="download-subtitle">Join thousands who have found peace in the chaos of daily life</p>
+                    <div class="download-features">
+                        <div class="download-feature">
+                            <i data-lucide="check-circle"></i>
+                            <span>50+ guided micro-meditations</span>
+                        </div>
+                        <div class="download-feature">
+                            <i data-lucide="check-circle"></i>
+                            <span>Progress tracking & insights</span>
+                        </div>
+                        <div class="download-feature">
+                            <i data-lucide="check-circle"></i>
+                            <span>Offline mode available</span>
+                        </div>
+                        <div class="download-feature">
+                            <i data-lucide="check-circle"></i>
+                            <span>Free to start, no commitment</span>
+                        </div>
+                    </div>
+                    <div class="download-buttons">
+                        <a href="#" class="app-store-btn">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z'/%3E%3C/svg%3E" alt="Apple">
+                            Download for iOS
+                        </a>
+                        <a href="#" class="app-store-btn">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.699 12l1.999-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z'/%3E%3C/svg%3E" alt="Android">
+                            Get it on Google Play
+                        </a>
+                    </div>
+                </div>
+                <div class="download-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="app-preview">
+                                <div class="app-header">
+                                    <div class="app-time">9:41</div>
+                                    <div class="app-title">Grounded</div>
+                                </div>
+                                <div class="app-content">
+                                    <div class="meditation-card">
+                                        <h3>Morning Clarity</h3>
+                                        <p>3 min • Breathing</p>
+                                        <div class="play-button-small">
+                                            <i data-lucide="play"></i>
+                                        </div>
+                                    </div>
+                                    <div class="meditation-card">
+                                        <h3>Stress Release</h3>
+                                        <p>2 min • Body Scan</p>
+                                        <div class="play-button-small">
+                                            <i data-lucide="play"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-text">Grounded</span>
+                        <p>Micro meditation for modern life</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>App</h4>
+                    <ul>
+                        <li><a href="#">Download iOS</a></li>
+                        <li><a href="#">Download Android</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Meditation Guide</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Research</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Grounded. All rights reserved. Made with ♡ for mindful living.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
