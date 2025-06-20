@@ -242,6 +242,15 @@ class GroundedApp {
             this.toggleBreathing();
         };
         
+        // Global download form functions
+        window.openDownloadForm = () => {
+            this.openDownloadForm();
+        };
+        
+        window.closeDownloadForm = () => {
+            this.closeDownloadForm();
+        };
+        
         // Keyboard shortcuts
         document.addEventListener('keydown', (e) => {
             if (e.code === 'Space' && e.target.tagName !== 'INPUT') {
@@ -268,6 +277,34 @@ class GroundedApp {
                 }
             }
         });
+        
+        // Modal event listeners
+        const modal = document.getElementById('downloadModal');
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                this.closeDownloadForm();
+            }
+        });
+        
+        // ESC key to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.closeDownloadForm();
+            }
+        });
+    }
+    
+    // Download form modal functions
+    openDownloadForm() {
+        const modal = document.getElementById('downloadModal');
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+    
+    closeDownloadForm() {
+        const modal = document.getElementById('downloadModal');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
     }
     
     // Utility function for zen-like random inspirational moments
